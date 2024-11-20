@@ -1,0 +1,204 @@
+/* Define CSS Variables */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #0056b3;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --danger-hover: #c82333;
+  --text-color: #333;
+  --background-light: #f9f9f9;
+  --font-size-large: 1.8rem;
+  --font-size-medium: 1rem;
+  --font-size-small: 0.9rem;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* General Container Styling */
+.todo {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  background-color: var(--background-light);
+}
+
+/* Heading Style */
+h1 {
+  font-size: var(--font-size-large);
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+h2 {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: var(--font-size-medium);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: var(--primary-color);
+}
+
+button {
+  padding: 10px 20px;
+  font-size: var(--font-size-medium);
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+
+button:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* List Styling */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  background-color: var(--background-light);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+li:hover {
+  background-color: #f1f1f1;
+}
+
+li span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--font-size-medium);
+}
+
+/* Icon Styling */
+.done {
+  color: var(--success-color);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.done:hover {
+  transform: scale(1.1);
+}
+
+.done:focus {
+  outline: 2px solid var(--success-color);
+  outline-offset: 2px;
+}
+
+.delete {
+  color: var(--danger-color);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.delete:hover {
+  transform: scale(1.1);
+  color: var(--danger-hover);
+}
+
+.delete:focus {
+  outline: 2px solid var(--danger-color);
+  outline-offset: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .todo {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  form {
+    gap: 8px;
+  }
+
+  li {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .done,
+  .delete {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .todo {
+    padding: 10px;
+  }
+
+  form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  form input,
+  form button {
+    flex: none;
+    width: 100%;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px;
+  }
+
+  li span {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .done,
+  .delete {
+    font-size: 16px;
+  }
+}
